@@ -1,0 +1,61 @@
+/* Clases para títulos */
+.title-1 {
+  @apply font-display text-heading-1 text-darkwood;
+}
+
+.title-2 {
+  @apply font-display text-heading-2 text-darkwood;
+}
+
+.title-3 {
+  @apply font-display text-heading-3 text-darkwood;
+}
+
+/* Clases para subtítulos */
+.subtitle-large {
+  @apply font-display text-subtitle-large text-darkwood;
+}
+
+.subtitle {
+  @apply font-display text-subtitle text-darkwood;
+}
+
+/* Clases para texto del cuerpo */
+.body-large {
+  @apply font-sans text-body-large text-darkwood;
+}
+
+.body {
+  @apply font-sans text-body text-darkwood;
+}
+
+/* Clases para elementos destacados */
+.display-large {
+  @apply font-display italic text-display-large text-darkwood;
+}
+
+.display-medium {
+  @apply font-display italic text-display-medium text-darkwood;
+}
+
+/* Variantes */
+.text-italic {
+  font-style: italic;
+}
+
+/* Clases de peso de fuente */
+.font-light {
+  font-weight: 300;
+}
+
+.font-regular {
+  font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
+} 

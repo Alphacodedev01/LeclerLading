@@ -1,0 +1,7 @@
+{
+  "framework": "nuxt",
+  "buildCommand": "bun run build",
+  "devCommand": "bun run dev",
+  "installCommand": "bun install",
+  "outputDirectory": ".output"
+} 
