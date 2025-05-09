@@ -19,14 +19,16 @@
                 alt="Leclerc Hotel Logo"
                 class="h-14 md:h-24 w-auto"
               />
-            </NuxtLink>
+          </NuxtLink>
           </div>
           
           <!-- Botón de menú (móvil) / Botones (desktop) -->
           <div class="w-20 md:w-48 flex justify-end pr-4 md:pr-0">
             <button 
               class="text-darkwood md:hidden"
-              @click="isMenuOpen = !isMenuOpen"
+              @click="toggleMenu"
+              type="button"
+              aria-label="Menú"
             >
               <svg 
                 v-if="!isMenuOpen"
@@ -75,40 +77,32 @@
     </div>
     
     <!-- Menú móvil -->
-    <Transition
-      enter-active-class="transition-opacity duration-200 ease-out"
-      enter-from-class="opacity-0"
-      enter-to-class="opacity-100"
-      leave-active-class="transition-opacity duration-200 ease-in"
-      leave-from-class="opacity-100"
-      leave-to-class="opacity-0"
+    <div 
+      v-show="isMenuOpen" 
+      class="fixed inset-x-0 top-20 md:top-32 bottom-0 bg-[#f5f5f1] z-40 md:hidden overflow-y-auto transition-opacity duration-200"
+      :class="isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'"
     >
-      <div 
-        v-if="isMenuOpen" 
-        class="fixed inset-x-0 top-20 md:top-32 bottom-0 bg-[#f5f5f1] z-40 md:hidden overflow-y-auto"
-      >
-        <div class="flex flex-col items-center space-y-8 py-8">
-          <NuxtLink 
-            v-for="(link, index) in navigationLinks" 
-            :key="index"
-            :to="link.to"
-            class="text-[#4A4A4A] hover:text-gold transition-colors duration-200 text-2xl font-display tracking-wide"
-            @click="isMenuOpen = false"
+      <div class="flex flex-col items-center space-y-8 py-8">
+        <NuxtLink 
+          v-for="(link, index) in navigationLinks" 
+          :key="index"
+          :to="link.to"
+          class="text-[#4A4A4A] hover:text-gold transition-colors duration-200 text-2xl font-display tracking-wide"
+          @click="closeMenu"
+        >
+          {{ link.text }}
+        </NuxtLink>
+        <div class="pt-8">
+          <a 
+            href="https://reservas.leclerchotel.com" 
+            target="_blank" 
+            class="bg-[#8B7355] text-white px-10 py-4 hover:bg-[#6B5842] transition-colors duration-200 text-3xl font-display italic tracking-wide"
           >
-            {{ link.text }}
-          </NuxtLink>
-          <div class="pt-8">
-            <a 
-              href="https://reservas.leclerchotel.com" 
-              target="_blank" 
-              class="bg-[#8B7355] text-white px-10 py-4 hover:bg-[#6B5842] transition-colors duration-200 text-3xl font-display italic tracking-wide"
-            >
-              Reservar
-            </a>
-          </div>
+            Reservar
+          </a>
         </div>
       </div>
-    </Transition>
+    </div>
     
     <!-- Barra de navegación con links (desktop) -->
     <div class="bg-white border-b border-gray-200 hidden md:block">
@@ -130,19 +124,49 @@
       </div>
     </div>
   </nav>
-</template>
+</template> 
 
 <script setup>
 import { useRoute } from 'vue-router'
-import { computed } from 'vue'
+import { computed, ref, onMounted, onBeforeUnmount } from 'vue'
 
 const isMenuOpen = ref(false)
 
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value
+  if (isMenuOpen.value) {
+    document.body.style.overflow = 'hidden'
+  } else {
+    document.body.style.overflow = ''
+  }
+}
+
+const closeMenu = () => {
+  isMenuOpen.value = false
+  document.body.style.overflow = ''
+}
+
+// Cerrar el menú cuando cambia el tamaño de la ventana a desktop
+const handleResize = () => {
+  if (window.innerWidth >= 768 && isMenuOpen.value) {
+    closeMenu()
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('resize', handleResize)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', handleResize)
+  // Asegurarse de restaurar el overflow si el componente se desmonta mientras el menú está abierto
+  document.body.style.overflow = ''
+})
+
 const navigationLinks = [
-  { to: '/hotel', text: 'Hotel' },
   { to: '/habitaciones', text: 'Habitaciones' },
-  { to: '/servicios', text: 'Servicios' },
   { to: '/galeria', text: 'Galería' },
+  { to: '/servicios', text: 'Servicios' },
   { to: '/ubicacion-contacto', text: 'Ubicación y Contacto' },
 ]
 
@@ -161,5 +185,11 @@ const isHome = computed(() => route.path === '/')
 
 .router-link-exact-active span {
   transform: scaleX(1) !important;
+}
+
+@media (max-width: 767px) {
+  .pointer-events-none {
+    pointer-events: none;
+  }
 }
 </style> 

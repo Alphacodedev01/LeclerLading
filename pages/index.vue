@@ -330,7 +330,7 @@
 
 <script setup>
 import { useMotion } from '@vueuse/motion'
-</script>
+</script> 
 
 <style>
 .btn-primary {

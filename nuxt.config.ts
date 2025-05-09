@@ -91,7 +91,7 @@ export default defineNuxtConfig({
     '~/assets/css/typography.css'
   ],
   build: {
-    transpile: ['gsap'],
+    transpile: ['gsap', '@vueuse/motion'],
   },
   vite: {
     optimizeDeps: {
@@ -99,7 +99,7 @@ export default defineNuxtConfig({
     },
     build: {
       rollupOptions: {
-        external: ['@vueuse/motion']
+        // Removemos external: ['@vueuse/motion'] para permitir que se incluya en el bundle
       }
     },
     define: {
@@ -109,12 +109,12 @@ export default defineNuxtConfig({
   routeRules: {
     '/.well-known/**': { redirect: '/' }
   },
+  compatibilityDate: '2025-05-08',
   experimental: {
     payloadExtraction: false
   },
   nitro: {
     compressPublicAssets: true,
-    logLevel: 1,
-    compatibilityDate: '2025-05-08'
+    logLevel: 1
   }
 })

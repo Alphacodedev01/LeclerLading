@@ -22,6 +22,7 @@
     "@headlessui/vue": "^1.7.16",
     "@heroicons/vue": "^2.1.1",
     "@nuxt/image": "^1.0.0",
+    "@nuxt/kit": "3.17.2",
     "@tailwindcss/typography": "^0.5.10",
     "@vueuse/core": "^10.7.0",
     "@vueuse/motion": "^2.0.0",
