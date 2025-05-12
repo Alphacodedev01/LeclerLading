@@ -26,7 +26,7 @@
             v-motion
             :initial="{ opacity: 0, y: 50 }"
             :visible="{ opacity: 1, y: 0, transition: { duration: 1200 } }"
-            src="/images/hotel/logo2.png"
+            :src="logo"
             alt="Leclerc Hotel Boutique"
             class="w-[280px] sm:w-[400px] md:w-[500px] lg:w-[600px] mx-auto"
           />
@@ -347,6 +347,7 @@
 <script setup>
 import { useMotion } from '@vueuse/motion'
 import FrenchDecoration from '~/components/FrenchDecoration.vue'
+import { logo } from '~/assets/js/imageImports'
 </script> 
 
 <style>
