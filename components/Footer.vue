@@ -7,7 +7,7 @@
         <!-- Logo y texto -->
         <div class="md:col-span-2">
           <img 
-            :src="logo" 
+            src="/images/hotel/Logo2.png" 
             alt="Leclerc Hotel" 
             class="h-28 w-auto mb-6"
           />
@@ -123,5 +123,5 @@
 </template>
 
 <script setup>
-import { logo } from '~/assets/js/imageImports'
+// No necesitamos la importación del logo
 </script> 
