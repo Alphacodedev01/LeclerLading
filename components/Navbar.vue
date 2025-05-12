@@ -164,10 +164,10 @@ onBeforeUnmount(() => {
 })
 
 const navigationLinks = [
-  { to: '/habitaciones', text: 'Habitaciones' },
-  { to: '/galeria', text: 'Galería' },
-  { to: '/servicios', text: 'Servicios' },
-  { to: '/ubicacion-contacto', text: 'Ubicación y Contacto' },
+  { to: '#habitaciones', text: 'Habitaciones' },
+  { to: '#galeria', text: 'Galería' },
+  { to: '#servicios', text: 'Servicios' },
+  { to: '#contacto', text: 'Ubicación y Contacto' },
 ]
 
 const route = useRoute()
