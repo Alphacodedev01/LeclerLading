@@ -1,88 +1,107 @@
 <template>
-  <div class="min-h-screen bg-base">
-    <!-- Hero Section -->
-    <section class="relative h-[40vh] overflow-hidden">
-      <img 
-        src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1920&q=80"
-        alt="Galería Hotel Leclerc"
-        class="absolute inset-0 h-full w-full object-cover"
-      />
-      <div class="absolute inset-0 bg-gradient-to-b from-black/50 to-transparent"></div>
-      <div class="relative flex h-full items-center justify-center text-center">
-        <div class="px-4">
-          <p class="font-cursive text-3xl text-gold mb-2">Descubre</p>
-          <h1 class="font-playfair text-5xl text-white md:text-6xl">Nuestra Galería</h1>
-          <p class="mt-4 text-xl text-white/90">Elegancia en cada detalle</p>
-        </div>
+  <div class="min-h-screen section-background vertical-borders">
+    <div class="side-pattern pattern-left"></div>
+    <div class="side-pattern pattern-right"></div>
+    <div class="py-24 container mx-auto px-4 md:px-8 relative z-10">
+      <div class="text-center mb-16 main-section-decoration decoration-bottom">
+        <h1 class="font-['Pinyon_Script'] text-5xl md:text-6xl lg:text-7xl text-[#4A4A4A] mb-4">Galería</h1>
+        <div class="h-px w-24 mx-auto bg-[#CBA135]"></div>
+        <p class="mt-6 text-lg text-[#4A4A4A]/80 max-w-2xl mx-auto">
+          Explore nuestra colección de imágenes y descubra la elegancia y el encanto de Leclerc Hotel Boutique, donde cada detalle cuenta una historia de hospitalidad excepcional.
+        </p>
       </div>
-    </section>
 
-    <!-- Galería Grid -->
-    <section class="py-20">
-      <div class="container mx-auto px-4">
-        <!-- Filtros -->
-        <div class="mb-12 flex flex-wrap justify-center gap-4">
-          <p class="w-full text-center font-cursive text-3xl text-gold mb-6">Explora nuestros espacios</p>
-          <button 
-            v-for="category in categories" 
-            :key="category"
-            @click="activeCategory = category"
-            :class="[
-              'px-6 py-2 rounded-full transition-colors',
-              activeCategory === category 
-                ? 'bg-gold text-white' 
-                : 'bg-darkwood/5 text-darkwood hover:bg-darkwood/10'
-            ]"
-          >
-            {{ category }}
-          </button>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Habitaciones -->
+        <div class="mb-10">
+          <div class="overflow-hidden rounded-sm">
+            <img 
+              src="/images/FOTOS HOTEL/HABITACIONES/BLANCO NEGRO/_APR5069(1).jpg" 
+              alt="Habitación Blanco Negro" 
+              class="w-full h-80 object-cover hover:scale-105 transition-transform duration-700"
+            />
+          </div>
+          <h3 class="mt-4 font-display text-xl text-[#4A4A4A]">Suite Blanco Negro</h3>
+          <p class="text-[#4A4A4A]/70">Elegancia en contraste</p>
         </div>
 
-        <!-- Componente Gallery -->
-        <Gallery :images="filteredImages" />
+        <div class="mb-10">
+          <div class="overflow-hidden rounded-sm">
+            <img 
+              src="/images/FOTOS HOTEL/HABITACIONES/VERDE/leclercfinalshighres-2760.jpg" 
+              alt="Habitación Verde" 
+              class="w-full h-80 object-cover hover:scale-105 transition-transform duration-700"
+            />
+          </div>
+          <h3 class="mt-4 font-display text-xl text-[#4A4A4A]">Suite Verde</h3>
+          <p class="text-[#4A4A4A]/70">Naturaleza y serenidad</p>
+        </div>
+
+        <div class="mb-10">
+          <div class="overflow-hidden rounded-sm">
+            <img 
+              src="/images/FOTOS HOTEL/HABITACIONES/AZUL OBSCURO/_APR5050(1).jpg" 
+              alt="Habitación Azul Obscuro" 
+              class="w-full h-80 object-cover hover:scale-105 transition-transform duration-700"
+            />
+          </div>
+          <h3 class="mt-4 font-display text-xl text-[#4A4A4A]">Suite Azul</h3>
+          <p class="text-[#4A4A4A]/70">Profundidad y calma</p>
+        </div>
+
+        <!-- Espacios Comunes -->
+        <div class="mb-10">
+          <div class="overflow-hidden rounded-sm">
+            <img 
+              src="/images/FOTOS HOTEL/ZONA SOCIAL/20220223_124056.jpg" 
+              alt="Sala de Estar" 
+              class="w-full h-80 object-cover hover:scale-105 transition-transform duration-700"
+            />
+          </div>
+          <h3 class="mt-4 font-display text-xl text-[#4A4A4A]">Sala de Estar</h3>
+          <p class="text-[#4A4A4A]/70">Espacio de confort y reunión</p>
+        </div>
+
+        <div class="mb-10">
+          <div class="overflow-hidden rounded-sm">
+            <img 
+              src="/images/FOTOS HOTEL/FACHADA/_APR5096(2).jpg" 
+              alt="Fachada del Hotel" 
+              class="w-full h-80 object-cover hover:scale-105 transition-transform duration-700"
+            />
+          </div>
+          <h3 class="mt-4 font-display text-xl text-[#4A4A4A]">Fachada</h3>
+          <p class="text-[#4A4A4A]/70">Bienvenida con estilo</p>
+        </div>
+
+        <div class="mb-10">
+          <div class="overflow-hidden rounded-sm">
+            <img 
+              src="/images/FOTOS HOTEL/ALIMENTOS/leclercfinalshighres-2817.jpg" 
+              alt="Restaurante" 
+              class="w-full h-80 object-cover hover:scale-105 transition-transform duration-700"
+            />
+          </div>
+          <h3 class="mt-4 font-display text-xl text-[#4A4A4A]">Restaurante</h3>
+          <p class="text-[#4A4A4A]/70">Gastronomía excepcional</p>
+        </div>
       </div>
-    </section>
+
+      <div class="text-center mt-14">
+        <p class="text-[#4A4A4A]/70 mb-8">
+          Descubra más de nuestras instalaciones visitándonos en persona.
+        </p>
+        <a 
+          href="/contact" 
+          class="inline-block bg-[#CBA135] text-white px-8 py-3 rounded-sm hover:bg-opacity-90 transition-colors duration-300"
+        >
+          Contáctenos
+        </a>
+      </div>
+    </div>
   </div>
 </template>
 
-<script setup>
-import { ref, computed } from 'vue'
-
-const categories = ['Todos', 'Habitaciones', 'Restaurante', 'Spa', 'Instalaciones']
-const activeCategory = ref('Todos')
-
-const images = ref([
-  {
-    id: 1,
-    thumbnail: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80',
-    full: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1920&q=80',
-    alt: 'Suite Presidencial',
-    title: 'Suite Presidencial',
-    description: 'Nuestra suite más exclusiva con vistas panorámicas',
-    category: 'Habitaciones'
-  },
-  {
-    id: 2,
-    thumbnail: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80',
-    full: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1920&q=80',
-    alt: 'Restaurante Gourmet',
-    title: 'Restaurante Le Jardin',
-    description: 'Experiencia culinaria excepcional',
-    category: 'Restaurante'
-  },
-  {
-    id: 3,
-    thumbnail: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80',
-    full: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1920&q=80',
-    alt: 'Spa Wellness',
-    title: 'Spa & Wellness',
-    description: 'Un oasis de relajación y bienestar',
-    category: 'Spa'
-  }
-])
-
-const filteredImages = computed(() => {
-  if (activeCategory.value === 'Todos') return images.value
-  return images.value.filter(img => img.category === activeCategory.value)
-})
-</script> 
+<style scoped>
+/* Estilos específicos para la galería */
+</style> 

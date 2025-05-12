@@ -1,75 +1,81 @@
 <template>
   <div>
     <!-- Sección Hero -->
-    <section class="relative h-screen">
+    <section class="relative h-screen section-background vertical-borders">
       <div class="absolute inset-0">
         <img 
-          src="/public/images/FOTOS HOTEL/FOTOS HOTEL LECLECR/leclercfinalshighres-2893.jpg"
+          src="/images/FOTOS HOTEL/FOTOS HOTEL LECLECR/leclercfinalshighres-2893.jpg"
           alt="Leclerc Hotel Boutique" 
           class="w-full h-full object-cover"
         />
         <div class="absolute inset-0 bg-black/30"></div>
       </div>
       
+      <!-- Elementos decorativos unificados -->
+      <div class="side-pattern pattern-left"></div>
+      <div class="side-pattern pattern-right"></div>
+      <div class="corner-flourish top-left"></div>
+      <div class="corner-flourish top-right"></div>
+      <div class="corner-flourish bottom-left"></div>
+      <div class="corner-flourish bottom-right"></div>
+      
       <!-- Contenido Hero -->
       <div class="absolute inset-0 flex items-center justify-center">
-        <div class="text-center text-white space-y-6 px-4">
-          <h1 
+        <div class="text-center text-white space-y-6 px-4 border-decorative">
+          <img 
             v-motion
             :initial="{ opacity: 0, y: 50 }"
             :visible="{ opacity: 1, y: 0, transition: { duration: 1200 } }"
-            class="font-['Pinyon_Script'] text-7xl md:text-8xl lg:text-9xl"
-          >
-            Leclerc
-          </h1>
-          <p 
-            v-motion
-            :initial="{ opacity: 0 }"
-            :visible="{ opacity: 1, transition: { duration: 1000, delay: 500 } }"
-            class="font-sans uppercase tracking-[0.3em] text-sm md:text-base"
-          >
-            HOTEL BOUTIQUE
-          </p>
+            src="/images/FOTOS HOTEL/lOGO (2).png"
+            alt="Leclerc Hotel Boutique"
+            class="w-[280px] sm:w-[400px] md:w-[500px] lg:w-[600px] mx-auto"
+          />
+          
         </div>
       </div>
     </section>
 
     <!-- Sección de Introducción -->
-    <section class="relative py-20 bg-white" id="bienvenida">
-      <div class="max-w-7xl mx-auto px-6">
+    <section class="relative py-20 bg-white section-background" id="bienvenida">
+      <FrenchDecoration />
+      
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
         <div class="max-w-3xl mx-auto text-center space-y-12">
           <div 
             v-motion
             :initial="{ opacity: 0, y: 30 }"
             :visible="{ opacity: 1, y: 0, transition: { duration: 800 } }"
-            class="space-y-6"
+            class="space-y-4 sm:space-y-6 text-center"
           >
-            <p class="font-['Pinyon_Script'] text-6xl md:text-7xl text-[#4A4A4A]">
+            <p class="font-script text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-black mx-auto">
               Bienvenido
             </p>
-            <div class="h-px w-24 mx-auto bg-[#CBA135]"></div>
+            <div class="h-px w-16 sm:w-24 mx-auto bg-[#CBA135]"></div>
           </div>
           
           <div 
             v-motion
             :initial="{ opacity: 0 }"
             :visible="{ opacity: 1, transition: { duration: 1000, delay: 300 } }"
-            class="space-y-8"
+            class="space-y-6 sm:space-y-8 px-4 sm:px-0"
           >
-            <p class="font-sans text-lg md:text-xl text-[#4A4A4A]/80 leading-relaxed">
+            <p class="font-serif text-base sm:text-lg md:text-xl text-black leading-relaxed">
               Un refugio de elegancia atemporal donde cada detalle ha sido cuidadosamente diseñado para ofrecer una experiencia extraordinaria.
             </p>
-            <p class="font-sans text-lg md:text-xl text-[#4A4A4A]/80 leading-relaxed">
+            <p class="font-serif text-base sm:text-lg md:text-xl text-black leading-relaxed">
               Descubra el arte de la hospitalidad francesa en un entorno que combina la sofisticación clásica con el confort contemporáneo.
             </p>
           </div>
+          <div class="decorative-separator"></div>
         </div>
       </div>
     </section>
 
     <!-- Sección de Galería -->
-    <section class="relative py-24 bg-white">
-      <div class="max-w-[1200px] mx-auto px-6">
+    <section class="relative py-24 bg-white section-background">
+      <FrenchDecoration />
+      
+      <div class="max-w-[1200px] mx-auto px-6 relative z-10">
         <!-- Versión Desktop -->
         <div class="relative h-[80vh] hidden md:block">
           <!-- Imagen Sala de Estar -->
@@ -81,7 +87,7 @@
           >
             <div class="w-[320px] h-[380px] overflow-hidden rounded-sm">
               <img 
-                src="/public/images/FOTOS HOTEL/ZONA SOCIAL/20220223_124056.jpg"
+                src="/images/FOTOS HOTEL/ZONA SOCIAL/20220223_124056.jpg"
                 alt="Sala de Estar Leclerc" 
                 class="w-full h-full object-cover object-[center_80%]"
               />
@@ -97,7 +103,7 @@
           >
             <div class="relative">
               <img 
-                src="/public/images/FOTOS HOTEL/FOTOS HOTEL LECLECR/leclercfinalshighres-2838.jpg"
+                src="/images/FOTOS HOTEL/FOTOS HOTEL LECLECR/leclercfinalshighres-2838.jpg"
                 alt="Interior Hotel" 
                 class="max-w-[300px] w-auto h-auto rounded-sm"
               />
@@ -112,7 +118,7 @@
             :visible="{ opacity: 1, transition: { duration: 1000 } }"
           >
             <img 
-              src="/public/images/FOTOS HOTEL/FACHADA/_APR5096(2).jpg"
+              src="/images/FOTOS HOTEL/FACHADA/_APR5096(2).jpg"
               alt="Fachada Hotel" 
               class="max-w-[320px] w-auto h-auto rounded-sm"
             />
@@ -125,7 +131,7 @@
             :initial="{ opacity: 0 }"
             :visible="{ opacity: 1, transition: { duration: 1000 } }"
           >
-            <p class="font-['Pinyon_Script'] text-xl text-[#4A4A4A] leading-relaxed text-center">
+            <p class="font-script text-xl text-[#4A4A4A] leading-relaxed text-center">
               Leclerc<br>
               le abre sus puertas<br>
               y le recibe con los<br>
@@ -139,7 +145,7 @@
           <!-- Primera imagen (superior izquierda) -->
           <div class="relative w-[65%] aspect-[4/5] mb-[-10%]">
             <img 
-              src="/public/images/FOTOS HOTEL/ZONA SOCIAL/20220223_124056.jpg"
+              src="/images/FOTOS HOTEL/ZONA SOCIAL/20220223_124056.jpg"
               alt="Sala de Estar Leclerc" 
               class="w-full h-full object-cover rounded-sm shadow-md"
             />
@@ -148,61 +154,67 @@
           <!-- Segunda imagen (medio derecha) - Más grande -->
           <div class="relative w-[85%] aspect-[4/5] ml-auto">
             <img 
-              src="/public/images/FOTOS HOTEL/FOTOS HOTEL LECLECR/leclercfinalshighres-2838.jpg"
+              src="/images/FOTOS HOTEL/FOTOS HOTEL LECLECR/leclercfinalshighres-2838.jpg"
               alt="Interior Hotel" 
               class="w-full h-full object-cover rounded-sm shadow-md"
             />
           </div>
 
-          <!-- Tercera imagen (inferior izquierda) con texto superpuesto -->
+          <!-- Tercera imagen (inferior izquierda) -->
           <div class="relative w-[75%] aspect-[4/3] mt-[-30%]">
             <img 
-              src="/public/images/FOTOS HOTEL/FACHADA/_APR5096(2).jpg"
+              src="/images/FOTOS HOTEL/FACHADA/_APR5096(2).jpg"
               alt="Fachada Hotel" 
               class="w-full h-full object-cover rounded-sm shadow-md"
             />
           </div>
 
-          <!-- Texto decorativo en posición más baja -->
-          <div class="relative mt-[-10%] pb-20">
-            <div class="absolute right-[10%] bg-[#e9e9e4] p-6 rounded-sm shadow-md w-[80%] max-w-[250px] overflow-visible">
-              <p class="font-['Pinyon_Script'] text-xl text-[#4A4A4A] leading-relaxed text-center whitespace-normal">
-                Leclerc<br>
-                le abre sus puertas<br>
-                y le recibe con los<br>
-                brazos abiertos
-              </p>
+          <!-- Contenedor para centrar el texto -->
+          <div class="relative w-full mt-[-15%]">
+            <!-- Texto decorativo -->
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-[280px]">
+              <div class="bg-[#e9e9e4] p-6 rounded-sm shadow-md">
+                <p class="font-script text-2xl text-[#4A4A4A] leading-relaxed text-center">
+                  Leclerc<br>
+                  le abre sus puertas<br>
+                  y le recibe con los<br>
+                  brazos abiertos
+                </p>
+              </div>
             </div>
           </div>
+          <div class="pb-40"></div>
         </div>
       </div>
     </section>
 
     <!-- Sección de Habitaciones -->
-    <section class="relative py-24 bg-white">
-      <div class="max-w-7xl mx-auto px-6">
+    <section class="relative py-24 bg-white section-background">
+      <FrenchDecoration />
+      
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          <!-- Contenido de texto -->
-          <div class="space-y-12">
+          <!-- Contenido de texto de Habitaciones -->
+          <div class="space-y-12 text-center md:text-left">
             <div 
               v-motion
               :initial="{ opacity: 0, y: 30 }"
               :visible="{ opacity: 1, y: 0, transition: { duration: 800 } }"
-              class="space-y-6"
+              class="space-y-4 sm:space-y-6 text-center"
             >
-              <p class="font-['Pinyon_Script'] text-6xl md:text-7xl text-[#4A4A4A]">
+              <p class="font-script text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-black mx-auto">
                 Habitaciones
               </p>
-              <div class="h-px w-24 bg-[#CBA135]"></div>
+              <div class="h-px w-16 sm:w-24 mx-auto bg-[#CBA135]"></div>
             </div>
             
             <div 
               v-motion
               :initial="{ opacity: 0 }"
               :visible="{ opacity: 1, transition: { duration: 1000, delay: 300 } }"
-              class="space-y-8"
+              class="space-y-6 sm:space-y-8 px-4 sm:px-0"
             >
-              <p class="font-sans text-lg md:text-xl text-[#4A4A4A]/80 leading-relaxed">
+              <p class="font-serif text-base sm:text-lg md:text-xl text-black leading-relaxed">
                 Cada habitación es un universo de calma y elegancia. Inspiradas en la estética parisina, invitan al descanso con detalles acogedores, luz suave y un ambiente que abraza. Un espacio para desconectarse del mundo y dejarse llevar por la tranquilidad.
               </p>
             </div>
@@ -215,9 +227,9 @@
             :initial="{ opacity: 0, x: 50 }"
             :visible="{ opacity: 1, x: 0, transition: { duration: 1000 } }"
           >
-            <div class="aspect-[4/3] overflow-hidden rounded-sm">
+            <div class="aspect-[4/3] overflow-hidden rounded-sm max-w-[280px] sm:max-w-[400px] md:max-w-full mx-auto">
               <img 
-                src="/public/images/FOTOS HOTEL/HABITACIONES/BLANCO NEGRO/_APR5069(1).jpg" 
+                src="/images/FOTOS HOTEL/HABITACIONES/BLANCO NEGRO/_APR5069(1).jpg" 
                 alt="Habitaciones Leclerc" 
                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
@@ -228,8 +240,10 @@
     </section>
 
     <!-- Sección de Servicios -->
-    <section class="relative py-24 bg-white">
-      <div class="max-w-7xl mx-auto px-6">
+    <section class="relative py-24 bg-white section-background">
+      <FrenchDecoration />
+      
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <!-- Imagen -->
           <div 
@@ -238,36 +252,36 @@
             :initial="{ opacity: 0, x: -50 }"
             :visible="{ opacity: 1, x: 0, transition: { duration: 1000 } }"
           >
-            <div class="aspect-[4/3] overflow-hidden rounded-sm">
+            <div class="aspect-[4/3] overflow-hidden rounded-sm max-w-[280px] sm:max-w-[400px] md:max-w-full mx-auto">
               <img 
-                src="/public/images/FOTOS HOTEL/ALIMENTOS/leclercfinalshighres-2817.jpg"
+                src="/images/FOTOS HOTEL/ALIMENTOS/leclercfinalshighres-2817.jpg"
                 alt="Servicios Leclerc" 
                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
           </div>
 
-          <!-- Contenido de texto -->
-          <div class="space-y-12 order-1 md:order-2">
+          <!-- Contenido de texto de Servicios -->
+          <div class="space-y-12 order-1 md:order-2 text-center md:text-left">
             <div 
               v-motion
               :initial="{ opacity: 0, y: 30 }"
               :visible="{ opacity: 1, y: 0, transition: { duration: 800 } }"
-              class="space-y-6"
+              class="space-y-4 sm:space-y-6 text-center"
             >
-              <p class="font-['Pinyon_Script'] text-6xl md:text-7xl text-[#4A4A4A]">
+              <p class="font-script text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-black mx-auto">
                 Servicios
               </p>
-              <div class="h-px w-24 bg-[#CBA135]"></div>
+              <div class="h-px w-16 sm:w-24 mx-auto bg-[#CBA135]"></div>
             </div>
             
             <div 
               v-motion
               :initial="{ opacity: 0 }"
               :visible="{ opacity: 1, transition: { duration: 1000, delay: 300 } }"
-              class="space-y-8"
+              class="space-y-6 sm:space-y-8 px-4 sm:px-0"
             >
-              <p class="font-sans text-lg md:text-xl text-[#4A4A4A]/80 leading-relaxed">
+              <p class="font-serif text-base sm:text-lg md:text-xl text-black leading-relaxed">
                 En Leclerc Hotel Boutique, cada detalle está pensado para ofrecer una experiencia única. Desde la calidez de nuestro desayuno artesanal hasta la atención personalizada de nuestro equipo, buscamos que cada momento de tu estancia sea inolvidable. Disfruta de espacios diseñados para el descanso y la conexión, en un ambiente que combina la elegancia francesa con la hospitalidad caleña.
               </p>
             </div>
@@ -276,20 +290,22 @@
       </div>
     </section>
 
-    <!-- Sección de Redes Sociales -->
+    <!-- Sección de Redes Sociales sin decoración -->
     <section class="relative py-16 bg-[#ae9a89]">
-      <div class="max-w-7xl mx-auto px-6">
+      <!-- Removida la decoración FrenchDecoration de esta sección -->
+      
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
         <div class="text-center space-y-12">
           <div 
             v-motion
             :initial="{ opacity: 0, y: 30 }"
             :visible="{ opacity: 1, y: 0, transition: { duration: 800 } }"
-            class="space-y-6"
+            class="space-y-4 sm:space-y-6"
           >
-            <p class="font-['Pinyon_Script'] text-6xl md:text-7xl text-white">
+            <p class="font-script text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white">
               Redes Sociales
             </p>
-            <div class="h-px w-24 mx-auto bg-white/50"></div>
+            <div class="h-px w-16 sm:w-24 mx-auto bg-white/50"></div>
           </div>
           
           <div 
@@ -330,6 +346,7 @@
 
 <script setup>
 import { useMotion } from '@vueuse/motion'
+import FrenchDecoration from '~/components/FrenchDecoration.vue'
 </script> 
 
 <style>
@@ -339,5 +356,41 @@ import { useMotion } from '@vueuse/motion'
 
 footer {
   @apply bg-[#f5f5f1] text-[#4A4A4A];
+}
+
+.section-background {
+  @apply relative overflow-hidden;
+}
+
+.section-background::before {
+  content: '';
+  @apply absolute inset-0 bg-pattern-fleur-de-lis opacity-15 pointer-events-none;
+}
+
+.vertical-borders::before,
+.vertical-borders::after {
+  content: '';
+  @apply absolute top-[10%] bottom-[10%] w-px bg-gradient-to-b from-transparent via-[#CBA135]/15 to-transparent z-10 pointer-events-none;
+}
+
+.vertical-borders::before {
+  @apply left-8;
+}
+
+.vertical-borders::after {
+  @apply right-8;
+}
+
+.main-section-decoration::before {
+  content: '';
+  @apply absolute left-1/2 transform -translate-x-1/2 w-[90%] max-w-[1000px] h-px bg-gradient-to-r from-transparent via-[#CBA135]/20 to-transparent;
+}
+
+.decoration-top::before {
+  @apply top-5;
+}
+
+.decoration-bottom::before {
+  @apply bottom-5;
 }
 </style> 

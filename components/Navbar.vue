@@ -6,7 +6,7 @@
         <div class="flex justify-between items-center h-20 md:h-32">
           <!-- Botón de idioma (móvil) / Espacio (desktop) -->
           <div class="w-20 md:w-48 pl-4 md:pl-0">
-            <button class="text-[#4A4A4A] hover:text-gold transition-colors duration-200 text-lg md:hidden">
+            <button class="text-[#4A4A4A] hover:text-gold transition-colors duration-200 text-lg md:hidden font-serif">
               ES
             </button>
           </div>
@@ -15,11 +15,11 @@
           <div class="flex-1 flex justify-center">
             <NuxtLink to="/" class="block">
               <img 
-                src="/images/FOTOS HOTEL/Logo.png" 
+                src="/images/FOTOS HOTEL/profile.png" 
                 alt="Leclerc Hotel Logo"
                 class="h-14 md:h-24 w-auto"
               />
-          </NuxtLink>
+            </NuxtLink>
           </div>
           
           <!-- Botón de menú (móvil) / Botones (desktop) -->
@@ -34,7 +34,7 @@
                 v-if="!isMenuOpen"
                 class="w-8 h-8" 
                 fill="none" 
-                stroke="currentColor" 
+                stroke="currentColor"
                 viewBox="0 0 24 24"
               >
                 <path 
@@ -45,7 +45,7 @@
                 />
               </svg>
               <svg 
-                v-else
+                v-else 
                 class="w-8 h-8" 
                 fill="none" 
                 stroke="currentColor" 
@@ -60,7 +60,7 @@
               </svg>
             </button>
             <div class="hidden md:flex items-center space-x-6">
-              <button class="text-[#4A4A4A] hover:text-gold transition-colors duration-200 text-xl font-display tracking-wide">
+              <button class="text-[#4A4A4A] hover:text-gold transition-colors duration-200 text-xl tracking-wide font-serif">
                 ES
               </button>
               <a 
@@ -87,7 +87,7 @@
           v-for="(link, index) in navigationLinks" 
           :key="index"
           :to="link.to"
-          class="text-[#4A4A4A] hover:text-gold transition-colors duration-200 text-2xl font-display tracking-wide"
+          class="text-[#4A4A4A] hover:text-gold transition-colors duration-200 text-2xl font-serif tracking-wide"
           @click="closeMenu"
         >
           {{ link.text }}
@@ -113,7 +113,7 @@
             :key="index"
             :to="link.to" 
             :class="[
-              'text-[#4A4A4A] hover:text-gold transition-colors duration-200 text-xl font-display tracking-wide relative group',
+              'text-[#4A4A4A] hover:text-gold transition-colors duration-200 text-xl font-serif tracking-wide relative group',
               { 'router-link-exact-active': !isHome && $route.path === link.to }
             ]"
           >
@@ -124,7 +124,7 @@
       </div>
     </div>
   </nav>
-</template> 
+</template>
 
 <script setup>
 import { useRoute } from 'vue-router'

@@ -81,6 +81,10 @@ export default defineNuxtConfig({
         {
           rel: 'stylesheet',
           href: 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap'
+        },
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap'
         }
       ]
     }
@@ -88,7 +92,8 @@ export default defineNuxtConfig({
   css: [
     '@/assets/css/main.css',
     '~/assets/css/transitions.css',
-    '~/assets/css/typography.css'
+    '~/assets/css/typography.css',
+    '~/assets/css/decorative-elements.css'
   ],
   build: {
     transpile: ['gsap', '@vueuse/motion'],
@@ -107,7 +112,14 @@ export default defineNuxtConfig({
     },
   },
   routeRules: {
-    '/.well-known/**': { redirect: '/' }
+    '/.well-known/**': { 
+      cors: true,
+      headers: {
+        'content-type': 'application/json',
+        'cache-control': 'no-cache'
+      },
+      static: true
+    }
   },
   compatibilityDate: '2025-05-08',
   experimental: {

@@ -1,17 +1,18 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: [
     "./components/**/*.{js,vue,ts}",
     "./layouts/**/*.vue",
     "./pages/**/*.vue",
     "./plugins/**/*.{js,ts}",
     "./app.vue",
+    "./error.vue"
   ],
   theme: {
     extend: {
       colors: {
-        'gold': '#C8B560',
-        'darkwood': '#111111',
+        'gold': '#CBA135',
+        'darkwood': '#4A4A4A',
         'slate': '#64748b',
         'base': '#f5f5f1',
         'primary': '#C8B560',
@@ -23,10 +24,14 @@ export default {
           'jasmin': '#FFF5E1',
         }
       },
+      backgroundImage: {
+        'pattern-fleur-de-lis': "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='%23CBA135' fill-opacity='0.4'%3E%3Cpath d='M30 20c-1 0-1.8.8-1.8 1.8 0 .5.2 1 .6 1.3-.5.3-.8.8-.8 1.5 0 1 .8 1.8 1.8 1.8s1.8-.8 1.8-1.8c0-.7-.3-1.2-.8-1.5.4-.3.6-.8.6-1.3 0-1-.8-1.8-1.8-1.8zm0-10c-1 0-1.8.8-1.8 1.8 0 .5.2 1 .6 1.3-.5.3-.8.8-.8 1.5 0 1 .8 1.8 1.8 1.8s1.8-.8 1.8-1.8c0-.7-.3-1.2-.8-1.5.4-.3.6-.8.6-1.3 0-1-.8-1.8-1.8-1.8zm0 20c-1 0-1.8.8-1.8 1.8 0 .5.2 1 .6 1.3-.5.3-.8.8-.8 1.5 0 1 .8 1.8 1.8 1.8s1.8-.8 1.8-1.8c0-.7-.3-1.2-.8-1.5.4-.3.6-.8.6-1.3 0-1-.8-1.8-1.8-1.8zm0 20c-1 0-1.8.8-1.8 1.8 0 .5.2 1 .6 1.3-.5.3-.8.8-.8 1.5 0 1 .8 1.8 1.8 1.8s1.8-.8 1.8-1.8c0-.7-.3-1.2-.8-1.5.4-.3.6-.8.6-1.3 0-1-.8-1.8-1.8-1.8z'/%3E%3C/g%3E%3C/svg%3E\")",
+      },
       fontFamily: {
-        'display': ['Cormorant Garamond', 'serif'],
-        'display-italic': ['Cormorant Garamond', 'serif'],
-        'sans': ['Montserrat', 'sans-serif'],
+        'sans': ['Raleway', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        'serif': ['Cormorant Garamond', 'ui-serif', 'Georgia', 'serif'],
+        'display': ['Playfair Display', 'serif'],
+        'script': ['Pinyon Script', 'cursive'],
       },
       fontSize: {
         // Títulos principales
