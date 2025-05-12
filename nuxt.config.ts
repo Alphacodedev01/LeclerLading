@@ -22,6 +22,7 @@ export default defineNuxtConfig({
   },
   image: {
     provider: 'ipx',
+    dir: 'public',
     screens: {
       xs: 320,
       sm: 640,
@@ -31,11 +32,18 @@ export default defineNuxtConfig({
       xxl: 1536,
     },
     presets: {
-      hero: {
+      default: {
         modifiers: {
           format: 'webp',
           quality: 80,
           loading: 'lazy',
+        }
+      },
+      hero: {
+        modifiers: {
+          format: 'webp',
+          quality: 90,
+          loading: 'eager',
         }
       }
     }

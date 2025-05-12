@@ -3,10 +3,12 @@
     <!-- Sección Hero -->
     <section class="relative h-screen section-background vertical-borders">
       <div class="absolute inset-0">
-        <img 
+        <nuxt-img 
           src="/images/FOTOS HOTEL/FOTOS HOTEL LECLECR/leclercfinalshighres-2893.jpg"
           alt="Leclerc Hotel Boutique" 
           class="w-full h-full object-cover"
+          loading="eager"
+          format="webp"
         />
         <div class="absolute inset-0 bg-black/30"></div>
       </div>
@@ -22,13 +24,15 @@
       <!-- Contenido Hero -->
       <div class="absolute inset-0 flex items-center justify-center">
         <div class="text-center text-white space-y-6 px-4 border-decorative">
-          <img 
+          <nuxt-img 
             v-motion
             :initial="{ opacity: 0, y: 50 }"
             :visible="{ opacity: 1, y: 0, transition: { duration: 1200 } }"
             src="/images/FOTOS HOTEL/logo2.png"
             alt="Leclerc Hotel Boutique"
             class="w-[280px] sm:w-[400px] md:w-[500px] lg:w-[600px] mx-auto"
+            loading="eager"
+            format="webp"
           />
           
         </div>
@@ -86,10 +90,12 @@
             :visible="{ opacity: 1, transition: { duration: 1000 } }"
           >
             <div class="w-[320px] h-[380px] overflow-hidden rounded-sm">
-              <img 
+              <nuxt-img 
                 src="/images/FOTOS HOTEL/ZONA SOCIAL/20220223_124056.jpg"
                 alt="Sala de Estar Leclerc" 
                 class="w-full h-full object-cover object-[center_80%]"
+                loading="lazy"
+                format="webp"
               />
             </div>
           </div>
@@ -102,10 +108,12 @@
             :visible="{ opacity: 1, transition: { duration: 1000 } }"
           >
             <div class="relative">
-              <img 
+              <nuxt-img 
                 src="/images/FOTOS HOTEL/FOTOS HOTEL LECLECR/leclercfinalshighres-2838.jpg"
                 alt="Interior Hotel" 
-                class="max-w-[300px] w-auto h-auto rounded-sm"
+                class="max-w-[300px] w-auto h-auto rounded-sm shadow-md"
+                loading="lazy"
+                format="webp"
               />
             </div>
           </div>
@@ -117,10 +125,12 @@
             :initial="{ opacity: 0 }"
             :visible="{ opacity: 1, transition: { duration: 1000 } }"
           >
-            <img 
+            <nuxt-img 
               src="/images/FOTOS HOTEL/FACHADA/_APR5096(2).jpg"
               alt="Fachada Hotel" 
-              class="max-w-[320px] w-auto h-auto rounded-sm"
+              class="max-w-[320px] w-auto h-auto rounded-sm shadow-md"
+              loading="lazy"
+              format="webp"
             />
           </div>
 
@@ -144,28 +154,34 @@
         <div class="md:hidden relative">
           <!-- Primera imagen (superior izquierda) -->
           <div class="relative w-[65%] aspect-[4/5] mb-[-10%]">
-            <img 
+            <nuxt-img 
               src="/images/FOTOS HOTEL/ZONA SOCIAL/20220223_124056.jpg"
               alt="Sala de Estar Leclerc" 
               class="w-full h-full object-cover rounded-sm shadow-md"
+              loading="lazy"
+              format="webp"
             />
           </div>
 
           <!-- Segunda imagen (medio derecha) - Más grande -->
           <div class="relative w-[85%] aspect-[4/5] ml-auto">
-            <img 
+            <nuxt-img 
               src="/images/FOTOS HOTEL/FOTOS HOTEL LECLECR/leclercfinalshighres-2838.jpg"
               alt="Interior Hotel" 
               class="w-full h-full object-cover rounded-sm shadow-md"
+              loading="lazy"
+              format="webp"
             />
           </div>
 
           <!-- Tercera imagen (inferior izquierda) -->
           <div class="relative w-[75%] aspect-[4/3] mt-[-30%]">
-            <img 
+            <nuxt-img 
               src="/images/FOTOS HOTEL/FACHADA/_APR5096(2).jpg"
               alt="Fachada Hotel" 
               class="w-full h-full object-cover rounded-sm shadow-md"
+              loading="lazy"
+              format="webp"
             />
           </div>
 
@@ -228,10 +244,12 @@
             :visible="{ opacity: 1, x: 0, transition: { duration: 1000 } }"
           >
             <div class="aspect-[4/3] overflow-hidden rounded-sm max-w-[280px] sm:max-w-[400px] md:max-w-full mx-auto">
-              <img 
+              <nuxt-img 
                 src="/images/FOTOS HOTEL/HABITACIONES/BLANCO NEGRO/_APR5069(1).jpg" 
                 alt="Habitaciones Leclerc" 
                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+                format="webp"
               />
             </div>
           </div>
@@ -253,10 +271,12 @@
             :visible="{ opacity: 1, x: 0, transition: { duration: 1000 } }"
           >
             <div class="aspect-[4/3] overflow-hidden rounded-sm max-w-[280px] sm:max-w-[400px] md:max-w-full mx-auto">
-              <img 
+              <nuxt-img 
                 src="/images/FOTOS HOTEL/ALIMENTOS/leclercfinalshighres-2817.jpg"
                 alt="Servicios Leclerc" 
                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+                format="webp"
               />
             </div>
           </div>
