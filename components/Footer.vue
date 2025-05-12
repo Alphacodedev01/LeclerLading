@@ -7,7 +7,7 @@
         <!-- Logo y texto -->
         <div class="md:col-span-2">
           <img 
-            src="/public/images/hotel/logo2.png" 
+            :src="logo" 
             alt="Leclerc Hotel" 
             class="h-28 w-auto mb-6"
           />
@@ -123,5 +123,5 @@
 </template>
 
 <script setup>
-// No necesitamos importar FrenchDecoration ahora
+import { logo } from '~/assets/js/imageImports'
 </script> 
