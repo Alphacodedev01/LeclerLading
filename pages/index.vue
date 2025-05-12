@@ -4,7 +4,7 @@
     <section class="relative h-screen section-background vertical-borders">
       <div class="absolute inset-0">
         <img 
-          :src="heroImage"
+          src="/images/hotel/leclercfinalshighres-2893.jpg"
           alt="Leclerc Hotel Boutique" 
           class="w-full h-full object-cover"
         />
@@ -26,11 +26,10 @@
             v-motion
             :initial="{ opacity: 0, y: 50 }"
             :visible="{ opacity: 1, y: 0, transition: { duration: 1200 } }"
-            :src="logo"
+            src="/images/hotel/Logo2.png"
             alt="Leclerc Hotel Boutique"
             class="w-[280px] sm:w-[400px] md:w-[500px] lg:w-[600px] mx-auto"
           />
-          
         </div>
       </div>
     </section>
@@ -87,7 +86,7 @@
           >
             <div class="w-[320px] h-[380px] overflow-hidden rounded-sm">
               <img 
-                :src="livingRoom"
+                src="/images/hotel/20220223_124056.jpg"
                 alt="Sala de Estar Leclerc" 
                 class="w-full h-full object-cover object-[center_80%]"
               />
@@ -103,7 +102,7 @@
           >
             <div class="relative">
               <img 
-                :src="interior"
+                src="/images/hotel/leclercfinalshighres-2838.jpg"
                 alt="Interior Hotel" 
                 class="max-w-[300px] w-auto h-auto rounded-sm shadow-md"
               />
@@ -118,7 +117,7 @@
             :visible="{ opacity: 1, transition: { duration: 1000 } }"
           >
             <img 
-              :src="facade"
+              src="/images/hotel/_APR5096(2).jpg"
               alt="Fachada Hotel" 
               class="max-w-[320px] w-auto h-auto rounded-sm shadow-md"
             />
@@ -145,7 +144,7 @@
           <!-- Primera imagen (superior izquierda) -->
           <div class="relative w-[65%] aspect-[4/5] mb-[-10%]">
             <img 
-              :src="livingRoom"
+              src="/images/hotel/20220223_124056.jpg"
               alt="Sala de Estar Leclerc" 
               class="w-full h-full object-cover rounded-sm shadow-md"
             />
@@ -154,7 +153,7 @@
           <!-- Segunda imagen (medio derecha) - Más grande -->
           <div class="relative w-[85%] aspect-[4/5] ml-auto">
             <img 
-              :src="interior"
+              src="/images/hotel/leclercfinalshighres-2838.jpg"
               alt="Interior Hotel" 
               class="w-full h-full object-cover rounded-sm shadow-md"
             />
@@ -163,7 +162,7 @@
           <!-- Tercera imagen (inferior izquierda) -->
           <div class="relative w-[75%] aspect-[4/3] mt-[-30%]">
             <img 
-              :src="facade"
+              src="/images/hotel/_APR5096(2).jpg"
               alt="Fachada Hotel" 
               class="w-full h-full object-cover rounded-sm shadow-md"
             />
@@ -229,7 +228,7 @@
           >
             <div class="aspect-[4/3] overflow-hidden rounded-sm max-w-[280px] sm:max-w-[400px] md:max-w-full mx-auto">
               <img 
-                :src="room"
+                src="/images/hotel/_APR5069(1).jpg"
                 alt="Habitaciones Leclerc" 
                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
@@ -254,7 +253,7 @@
           >
             <div class="aspect-[4/3] overflow-hidden rounded-sm max-w-[280px] sm:max-w-[400px] md:max-w-full mx-auto">
               <img 
-                :src="services"
+                src="/images/hotel/leclercfinalshighres-2817.jpg"
                 alt="Servicios Leclerc" 
                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
@@ -292,8 +291,6 @@
 
     <!-- Sección de Redes Sociales sin decoración -->
     <section class="relative py-16 bg-[#ae9a89]">
-      <!-- Removida la decoración FrenchDecoration de esta sección -->
-      
       <div class="max-w-7xl mx-auto px-6 relative z-10">
         <div class="text-center space-y-12">
           <div 
@@ -347,7 +344,6 @@
 <script setup>
 import { useMotion } from '@vueuse/motion'
 import FrenchDecoration from '~/components/FrenchDecoration.vue'
-import { logo, heroImage, livingRoom, interior, facade, room, services } from '~/assets/js/imageImports'
 </script> 
 
 <style>

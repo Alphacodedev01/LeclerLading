@@ -5,12 +5,13 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     ['@nuxtjs/google-fonts', {
       families: {
-        Montserrat: [300, 400, 500, 600, 700],
-        'Playfair Display': [400, 500, 600, 700],
-        'Lobster': [400],
-        'Great Vibes': [400],
-        'Dancing Script': [400, 500, 600, 700],
-        'Pinyon Script': [400],
+        'Cormorant Garamond': {
+          wght: ['300', '400', '500', '600', '700'],
+          ital: ['400', '500']
+        },
+        'Pinyon Script': ['400'],
+        'Raleway': ['300', '400', '500', '600', '700'],
+        'Playfair Display': ['400', '500', '600', '700']
       },
       display: 'swap',
       prefetch: true,
@@ -69,9 +70,9 @@ export default defineNuxtConfig({
   },
   css: [
     '@/assets/css/main.css',
-    '~/assets/css/transitions.css',
-    '~/assets/css/typography.css',
-    '~/assets/css/decorative-elements.css'
+    '@/assets/css/transitions.css',
+    '@/assets/css/typography.css',
+    '@/assets/css/decorative-elements.css'
   ],
   build: {
     transpile: ['gsap', '@vueuse/motion'],
