@@ -3,51 +3,21 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/google-fonts',
-    '@vueuse/motion/nuxt',
-    '@nuxt/image',
-  ],
-  googleFonts: {
-    families: {
-      Montserrat: [300, 400, 500, 600, 700],
-      'Playfair Display': [400, 500, 600, 700],
-      'Lobster': [400],
-      'Great Vibes': [400],
-      'Dancing Script': [400, 500, 600, 700],
-      'Pinyon Script': [400],
-    },
-    display: 'swap',
-    prefetch: true,
-    preconnect: true,
-  },
-  image: {
-    provider: 'ipx',
-    dir: 'public',
-    screens: {
-      xs: 320,
-      sm: 640,
-      md: 768,
-      lg: 1024,
-      xl: 1280,
-      xxl: 1536,
-    },
-    presets: {
-      default: {
-        modifiers: {
-          format: 'webp',
-          quality: 80,
-          loading: 'lazy',
-        }
+    ['@nuxtjs/google-fonts', {
+      families: {
+        Montserrat: [300, 400, 500, 600, 700],
+        'Playfair Display': [400, 500, 600, 700],
+        'Lobster': [400],
+        'Great Vibes': [400],
+        'Dancing Script': [400, 500, 600, 700],
+        'Pinyon Script': [400],
       },
-      hero: {
-        modifiers: {
-          format: 'webp',
-          quality: 90,
-          loading: 'eager',
-        }
-      }
-    }
-  },
+      display: 'swap',
+      prefetch: true,
+      preconnect: true,
+    }],
+    '@vueuse/motion/nuxt',
+  ],
   app: {
     pageTransition: { 
       name: 'page',

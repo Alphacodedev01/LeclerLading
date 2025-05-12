@@ -15,7 +15,7 @@
           <div class="flex-1 flex justify-center">
             <NuxtLink to="/" class="block">
               <img 
-                src="/images/FOTOS HOTEL/profile.png" 
+                src="/images/hotel/profile.png" 
                 alt="Leclerc Hotel Logo"
                 class="h-14 md:h-24 w-auto"
               />

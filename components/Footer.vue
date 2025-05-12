@@ -7,7 +7,7 @@
         <!-- Logo y texto -->
         <div class="md:col-span-2">
           <img 
-            src="/images/FOTOS HOTEL/lOGO (2).png" 
+            src="/images/hotel/logo2.png" 
             alt="Leclerc Hotel" 
             class="h-28 w-auto mb-6"
           />
