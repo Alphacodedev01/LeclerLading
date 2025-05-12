@@ -15,7 +15,7 @@
           <div class="flex-1 flex justify-center">
             <NuxtLink to="/" class="block">
               <img 
-                src="/images/hotel/profile.png" 
+                :src="profile" 
                 alt="Leclerc Hotel Logo"
                 class="h-14 md:h-24 w-auto"
               />
@@ -129,6 +129,7 @@
 <script setup>
 import { useRoute } from 'vue-router'
 import { computed, ref, onMounted, onBeforeUnmount } from 'vue'
+import { profile } from '~/assets/js/imageImports'
 
 const isMenuOpen = ref(false)
 

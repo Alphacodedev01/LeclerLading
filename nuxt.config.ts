@@ -80,9 +80,12 @@ export default defineNuxtConfig({
     optimizeDeps: {
       include: ['@vueuse/motion', 'gsap/ScrollTrigger']
     },
+    assetsInclude: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.gif', '**/*.svg'],
     build: {
       rollupOptions: {
-        // Removemos external: ['@vueuse/motion'] para permitir que se incluya en el bundle
+        output: {
+          assetFileNames: 'assets/[name][extname]'
+        }
       }
     },
     define: {
