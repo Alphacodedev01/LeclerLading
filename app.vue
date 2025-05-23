@@ -4,6 +4,7 @@
     <main class="main-content">
       <NuxtPage />
     </main>
+    <FloatingMenu />
     <Footer />
   </div>
 </template>

@@ -49,7 +49,7 @@ const closeMenu = () => {
 
 <style scoped>
 .navbar {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -152,6 +152,7 @@ const closeMenu = () => {
     justify-content: center;
     padding: 2rem;
     transition: all 0.3s ease;
+    z-index: 1000;
   }
 
   .nav-links.nav-active {
@@ -160,6 +161,8 @@ const closeMenu = () => {
 
   .hamburger {
     display: flex;
+    position: relative;
+    z-index: 1100;
   }
 
   .hamburger.is-active .hamburger-line:nth-child(1) {
@@ -193,6 +196,8 @@ const closeMenu = () => {
 
   .logo-image {
     height: 80px;
+    position: relative;
+    z-index: 1100;
   }
 }
 
