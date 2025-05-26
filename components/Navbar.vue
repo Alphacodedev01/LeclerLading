@@ -12,11 +12,11 @@
       </NuxtLink>
       
       <div class="nav-links" :class="{ 'nav-active': isMenuOpen }">
-        <NuxtLink to="/rooms" class="nav-link" @click="closeMenu">{{ $t('nav.rooms') }}</NuxtLink>
-        <NuxtLink to="/services" class="nav-link" @click="closeMenu">{{ $t('nav.services') }}</NuxtLink>
-        <NuxtLink to="/rooftop" class="nav-link" @click="closeMenu">{{ $t('nav.rooftop') }}</NuxtLink>
-        <NuxtLink to="/contacts" class="nav-link" @click="closeMenu">{{ $t('nav.contact') }}</NuxtLink>
-        <button class="reserve-btn">Reservar</button>
+        <NuxtLink to="/rooms" class="nav-link" @click="closeMenu">{{ t('nav.rooms') }}</NuxtLink>
+        <NuxtLink to="/services" class="nav-link" @click="closeMenu">{{ t('nav.services') }}</NuxtLink>
+        <NuxtLink to="/rooftop" class="nav-link" @click="closeMenu">{{ t('nav.rooftop') }}</NuxtLink>
+        <NuxtLink to="/contacts" class="nav-link" @click="closeMenu">{{ t('nav.contact') }}</NuxtLink>
+        <button class="reserve-btn">{{ t('nav.book') }}</button>
         <LanguageSwitcher />
       </div>
 
@@ -30,6 +30,7 @@
 </template>
 
 <script setup>
+const { t } = useI18n()
 const isMenuOpen = ref(false)
 
 const toggleMenu = () => {

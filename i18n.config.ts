@@ -11,33 +11,28 @@ export default {
         rooms: 'Habitaciones',
         services: 'Servicios',
         rooftop: 'Terraza',
-        contact: 'Contacto'
+        contact: 'Contacto',
+        book: 'Reservar'
       },
       home: {
         hero: {
-          title: 'Tu hogar en Colombia',
-          subtitle: 'Disfruta de una experiencia única en el corazón de la ciudad'
+          title: 'Descubre',
+          elegance: 'la Elegancia',
+          enjoy: 'Disfruta de',
+          tranquility: 'la Tranquilidad'
         },
-        about: {
-          title: 'Sobre Nosotros',
-          description: 'Ofrecemos una experiencia única combinando el confort moderno con la calidez colombiana'
-        }
-      },
-      rooms: {
-        title: 'Nuestras Habitaciones',
-        description: 'Descubre el confort y la elegancia en cada una de nuestras habitaciones'
-      },
-      services: {
-        title: 'Servicios',
-        description: 'Ofrecemos una amplia gama de servicios para hacer tu estancia inolvidable'
-      },
-      contact: {
-        title: 'Contáctanos',
-        form: {
-          name: 'Nombre',
-          email: 'Correo electrónico',
-          message: 'Mensaje',
-          submit: 'Enviar'
+        features: {
+          description: 'Deléitate con habitaciones elegantes, disfruta de una exquisita gastronomía y sumérgete en la calidez de nuestra hospitalidad.',
+          button: 'VER NUESTRAS HABITACIONES'
+        },
+        services: {
+          title: 'Experiencia Única',
+          description: 'Descubre el equilibrio perfecto entre confort y elegancia. Nuestras habitaciones están cuidadosamente diseñadas con detalles refinados y amenidades selectas para brindarte una experiencia memorable.',
+          button: 'EXPLORAR SERVICIOS'
+        },
+        testimonials: {
+          title: 'Huéspedes Felices',
+          subtitle: 'Sobre su estancia con nosotros'
         }
       }
     },
@@ -48,33 +43,28 @@ export default {
         rooms: 'Rooms',
         services: 'Services',
         rooftop: 'Rooftop',
-        contact: 'Contact'
+        contact: 'Contact',
+        book: 'Book'
       },
       home: {
         hero: {
-          title: 'Your Home in Colombia',
-          subtitle: 'Enjoy a unique experience in the heart of the city'
+          title: 'Discover',
+          elegance: 'Elegance',
+          enjoy: 'Experience',
+          tranquility: 'Tranquility'
         },
-        about: {
-          title: 'About Us',
-          description: 'We offer a unique experience combining modern comfort with Colombian warmth'
-        }
-      },
-      rooms: {
-        title: 'Our Rooms',
-        description: 'Discover comfort and elegance in each of our rooms'
-      },
-      services: {
-        title: 'Services',
-        description: 'We offer a wide range of services to make your stay unforgettable'
-      },
-      contact: {
-        title: 'Contact Us',
-        form: {
-          name: 'Name',
-          email: 'Email',
-          message: 'Message',
-          submit: 'Submit'
+        features: {
+          description: 'Delight in stylish rooms, relish exquisite dining, and bask in the warmth of our hospitality.',
+          button: 'VIEW OUR ROOMS'
+        },
+        services: {
+          title: 'Unique Experience',
+          description: 'Discover the perfect balance between comfort and elegance. Our rooms are carefully designed with refined details and select amenities to provide you with a memorable experience.',
+          button: 'EXPLORE SERVICES'
+        },
+        testimonials: {
+          title: 'Happy Visitors',
+          subtitle: 'On finding a comfortable stay'
         }
       }
     }

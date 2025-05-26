@@ -11,12 +11,28 @@ export default {
         rooms: 'Habitaciones',
         services: 'Servicios',
         rooftop: 'Terraza',
-        contact: 'Contacto'
+        contact: 'Contacto',
+        book: 'Reservar'
       },
       home: {
         hero: {
-          title: 'Tu hogar en Colombia',
-          subtitle: 'Disfruta de una experiencia única en el corazón de la ciudad'
+          title: 'Descubre',
+          subtitle: 'la Elegancia',
+          title2: 'Disfruta',
+          subtitle2: 'la Tranquilidad'
+        },
+        features: {
+          description: 'Aquí, cada detalle cuenta una historia.Deja que la arquitectura, los sabores y la atención personalizada despierten tus sentidos.',
+          button: 'CONOCE NUESTRAS HABITACIONES'
+        },
+        services: {
+          title: 'Experiencia Única',
+          description: 'Descubre el equilibrio perfecto entre confort y elegancia. Nuestras habitaciones están cuidadosamente diseñadas con detalles refinados y amenidades selectas para brindarte una experiencia memorable.',
+          button: 'EXPLORAR SERVICIOS'
+        },
+        testimonials: {
+          title: 'Visitantes Felices',
+          subtitle: 'Lo que dicen de nosotros'
         },
         about: {
           title: 'Sobre Nosotros',
@@ -49,12 +65,28 @@ export default {
         rooms: 'Rooms',
         services: 'Services',
         rooftop: 'Rooftop',
-        contact: 'Contact'
+        contact: 'Contact',
+        book: 'Book'
       },
       home: {
         hero: {
-          title: 'Your Home in Colombia',
-          subtitle: 'Enjoy a unique experience in the heart of the city'
+          title: 'Discover',
+          subtitle: 'Elegance',
+          title2: 'Enjoy',
+          subtitle2: 'the Tranquility'
+        },
+        features: {
+          description: 'Here, every detail tells a story. Let the architecture, flavors, and personalized attention awaken your senses.',
+          button: 'DISCOVER OUR ROOMS'
+        },
+        services: {
+          title: 'Unique Experience',
+          description: 'Discover the perfect balance between comfort and elegance. Our rooms are carefully designed with refined details and select amenities to provide you with a memorable experience.',
+          button: 'EXPLORE SERVICES'
+        },
+        testimonials: {
+          title: 'Happy Visitors',
+          subtitle: 'What our guests say'
         },
         about: {
           title: 'About Us',
