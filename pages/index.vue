@@ -21,25 +21,35 @@
   <section class="features-section">
     <div class="features-content">
       <div class="features-layout">
-        <div class="image-top-left" ref="featureTopLeft" :class="{ 'reveal-active': isFeatureVisible }">
+        <div class="image-top-left desktop-img" ref="featureTopLeft" :class="{ 'reveal-active': isFeatureVisible }">
           <NuxtImg src="/images/Fachada.webp" alt="Luxury Lounge" class="feature-image" />
         </div>
-        <div class="image-bottom-left" ref="featureBottomLeft" :class="{ 'reveal-active': isFeatureVisible }">
+        <div class="image-bottom-left desktop-img" ref="featureBottomLeft" :class="{ 'reveal-active': isFeatureVisible }">
           <NuxtImg src="/images/3.webp" alt="Exquisite Dining" class="feature-image" />
         </div>
         <div class="features-text" ref="featureText" :class="{ 'reveal-active': isFeatureVisible }">
           <h2>{{ t('home.features.description') }}</h2>
-          <NuxtLink to="/rooms" class="view-rooms-btn">
+          <NuxtLink to="/rooms" class="view-rooms-btn desktop-only">
             {{ t('home.features.button') }}
           </NuxtLink>
         </div>
-        <div class="image-top-right" ref="featureTopRight" :class="{ 'reveal-active': isFeatureVisible }">
+        <div class="image-top-right desktop-img" ref="featureTopRight" :class="{ 'reveal-active': isFeatureVisible }">
           <NuxtImg src="/images/9.webp" alt="Luxury Room" class="feature-image" />
         </div>
-        <div class="image-bottom-right" ref="featureBottomRight" :class="{ 'reveal-active': isFeatureVisible }">
+        <div class="image-bottom-right desktop-img" ref="featureBottomRight" :class="{ 'reveal-active': isFeatureVisible }">
           <NuxtImg src="/images/amenites3.webp" alt="Pool View" class="feature-image" />
         </div>
+
+        <div class="mobile-gallery mobile-only" :class="{ 'reveal-active': isFeatureVisible }">
+          <NuxtImg src="/images/Fachada.webp" alt="Luxury Lounge" class="gallery-img" />
+          <NuxtImg src="/images/3.webp" alt="Exquisite Dining" class="gallery-img" />
+          <NuxtImg src="/images/9.webp" alt="Luxury Room" class="gallery-img" />
+          <NuxtImg src="/images/amenites3.webp" alt="Pool View" class="gallery-img" />
+        </div>
       </div>
+      <NuxtLink to="/rooms" class="view-rooms-btn mobile-only">
+        {{ t('home.features.button') }}
+      </NuxtLink>
     </div>
   </section>
 
@@ -48,7 +58,7 @@
       <div class="services-text" ref="servicesText" :class="{ 'reveal-active': isServicesVisible }">
         <h2>{{ t('home.services.title') }}</h2>
         <p>{{ t('home.services.description') }}</p>
-        <NuxtLink to="/services" class="explore-button">
+        <NuxtLink to="/services" class="explore-button desktop-only">
           {{ t('home.services.button') }}
         </NuxtLink>
       </div>
@@ -60,6 +70,10 @@
           loading="lazy"
         />
       </div>
+      <!-- Botón móvil debajo de la imagen -->
+      <NuxtLink to="/services" class="explore-button mobile-only">
+        {{ t('home.services.button') }}
+      </NuxtLink>
     </div>
   </section>
 
@@ -299,6 +313,7 @@ const observeServices = () => {
   display: flex;
   align-items: center;
   overflow: hidden;
+  padding-bottom: 3rem;
 }
 
 /* Estilos simplificados para la navbar en el hero */
@@ -357,7 +372,7 @@ const observeServices = () => {
 
 .image-wrapper {
   width: 100%;
-  height: 35vh;
+  height: 30vh;
   border-radius: 30px;
   overflow: hidden;
   opacity: 0;
@@ -373,9 +388,9 @@ const observeServices = () => {
 }
 
 @media (max-width: 768px) {
-  .hero-content {
-    padding: 1.5rem;
-    gap: 1.5rem;
+  .hero-section {
+    min-height: 100vh;
+    padding-bottom: 3rem;
   }
 
   .top-text {
@@ -389,8 +404,190 @@ const observeServices = () => {
   }
 
   .image-wrapper {
-    height: 25vh;
+    height: 30vh;
     border-radius: 20px;
+  }
+
+  .features-section {
+    padding: 2rem 1.5rem;
+    background-color: #fff;
+  }
+
+  .features-content {
+    padding: 0;
+  }
+
+  .features-layout {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .features-text {
+    order: -1;
+    text-align: center;
+    padding: 0;
+    margin-bottom: 3rem;
+  }
+
+  .features-text h2 {
+    font-size: 1.7rem !important;
+    line-height: 1.25 !important;
+    margin: 0 auto 1.2rem !important;
+    max-width: 280px;
+  }
+
+  .view-rooms-btn {
+    background-color: transparent;
+    border: 1px solid #054637;
+    color: #054637;
+    padding: 1rem 2rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 3rem;
+  }
+
+  /* Galería de imágenes */
+  .features-layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 0;
+  }
+
+  .image-top-left,
+  .image-bottom-left,
+  .image-top-right,
+  .image-bottom-right {
+    width: 100%;
+    aspect-ratio: 1;
+    position: relative;
+    margin: 0;
+  }
+
+  .feature-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  /* Ocultar la quinta imagen */
+  .image-bottom-right:last-child {
+    display: none;
+  }
+
+  /* Contenedor de imágenes */
+  .features-images-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  /* Ajustes específicos para el botón */
+  .view-rooms-btn {
+    border: 2px solid #054637;
+    padding: 0.8rem 1.5rem;
+    font-weight: 500;
+  }
+
+  .services-preview-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .services-preview-content {
+    display: block !important;
+    text-align: center;
+    padding: 0;
+  }
+
+  .services-text {
+    width: 100%;
+    padding: 0 1rem;
+    margin: 0 auto 3rem auto;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .services-text h2 {
+    font-size: 2.5rem !important;
+    line-height: 1.2 !important;
+    margin: 0 auto 1.5rem auto !important;
+    text-align: center !important;
+    width: 100%;
+  }
+
+  .services-text p {
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+    color: #666 !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .services-image {
+    width: 100%;
+    margin: 0 auto 3rem auto;
+    display: block;
+    position: relative;
+  }
+
+  .services-image .main-image {
+    width: 100% !important;
+    height: 300px !important;
+    object-fit: cover !important;
+    border-radius: 12px !important;
+    display: block !important;
+  }
+
+  .mobile-only.explore-button {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .mobile-only.explore-button {
+    margin-top: 0;
+    padding: 1rem 2rem !important;
+    font-size: 0.8rem !important;
+    letter-spacing: 1.5px !important;
+    border: 2px solid #054637 !important;
+  }
+
+  .desktop-only { display: none; }
+  .mobile-only { display: inline-block; }
+
+  .testimonials-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .testimonials-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .testimonials-slider {
+    padding: 0 !important;
+  }
+
+  .testimonial-card {
+    flex: 0 0 100%;
+    margin-right: 1rem;
+    border-width: 2px;
+    padding: 2rem;
+  }
+
+  /* Quitar desvanecido extremos carrusel */
+  .testimonials-container::before,
+  .testimonials-container::after {
+    display: none !important;
   }
 }
 
@@ -413,6 +610,32 @@ const observeServices = () => {
   .image-wrapper {
     height: 20vh;
     border-radius: 15px;
+  }
+
+  .services-preview-section {
+    padding: 3rem 1rem !important;
+  }
+
+  .services-text {
+    padding: 0 0.5rem !important;
+  }
+
+  .services-text h2 {
+    font-size: 2rem !important;
+    text-align: center !important;
+  }
+
+  .services-text p {
+    font-size: 0.95rem !important;
+    text-align: center !important;
+  }
+
+  .services-image {
+    height: 250px !important;
+  }
+
+  .services-image .main-image {
+    height: 250px !important;
   }
 }
 
@@ -635,23 +858,6 @@ const observeServices = () => {
   }
 }
 
-@media (max-width: 768px) {
-  .features-section {
-    padding: 4rem 0 2rem;
-  }
-
-  .features-text h2 {
-    font-size: 2rem;
-  }
-
-  .image-top-left,
-  .image-bottom-left,
-  .image-top-right,
-  .image-bottom-right {
-    max-width: 100%;
-  }
-}
-
 .services-preview-section {
   padding: 8rem 0;
   background-color: #fff;
@@ -731,30 +937,6 @@ const observeServices = () => {
 
   .services-text h2 {
     font-size: 3rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .services-preview-section {
-    padding: 4rem 0;
-  }
-
-  .services-preview-content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .services-text {
-    padding-right: 0;
-    text-align: center;
-  }
-
-  .services-text p {
-    max-width: 100%;
-  }
-
-  .services-image {
-    height: 400px;
   }
 }
 
@@ -978,5 +1160,39 @@ const observeServices = () => {
     opacity: 1;
     transform: scale(1);
   }
+}
+
+.desktop-img { display: block; }
+.mobile-only { display: none; }
+
+@media (max-width: 768px) {
+  .desktop-img { display: none; }
+  .mobile-only { display: block; }
+
+  .mobile-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+  }
+
+  .mobile-gallery.reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .mobile-gallery .gallery-img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  /* Ocultar botón desktop y mostrar botón mobile */
+  .desktop-only { display: none; }
+  .mobile-only.view-rooms-btn { display: inline-block; margin-top: 2rem; }
 }
 </style>
